@@ -7,8 +7,8 @@ import {
   Outlet,
   Route,
   RouterProvider,
+  Link,
 } from "react-router-dom";
-
 
 const AppLayout = () => {
   return (
@@ -26,6 +26,17 @@ const router = createBrowserRouter(
     <Route path='/' element={<AppLayout />}>
       <Route index element={<HomePage />} />
       <Route path=':country' element={<SingleCountryPage />} />
+      <Route
+        path='*'
+        element={
+          <div className='absolute text-center'>
+            <h3>No country to display...</h3>
+            <Link to='/' className='btn'>
+              Home
+            </Link>
+          </div>
+        }
+      />
     </Route>
   )
 );

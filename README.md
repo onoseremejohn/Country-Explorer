@@ -29,7 +29,7 @@ Users can:
 
 ### Screenshot
 
-![SCREENSHOT](./screenshot.png)
+![SCREENSHOT](./public/screenshot.png)
 
 **Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
@@ -37,7 +37,6 @@ Users can:
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
 
 ## My Process
 
@@ -57,7 +56,6 @@ Users can:
 - I also learned about global state management, which allowed me to efficiently manage and share data between different components of the project.
 - I was able to expand my knowledge of web development by learning and applying advanced CSS techniques to create more responsive and dynamic user interfaces for the project.
 
-
 ```js
 const proudOfThisFunc = ({ borders }) => {
   const borderCountries = allCountries.filter((country) =>
@@ -70,7 +68,7 @@ const proudOfThisFunc = ({ borders }) => {
 
 - Website - [Onosereme Emuemhonjie](https://onosereme.netlify.app)
 - Frontend Mentor - [@onoseremejohn](https://www.frontendmentor.io/profile/onoseremejohn)
-- Twitter - [@yourusername](https://www.twitter.com/onoseremejohn)
+- Twitter - [@onoseremejohn](https://www.twitter.com/onoseremejohn)
 
 ## Acknowledgments
 

@@ -5,9 +5,9 @@ import { Link, useParams } from "react-router-dom";
 import Loading from "../Components/Loading";
 import { useGlobalContext } from "../Context";
 import Borders from "../Components/Borders";
+
 const SingleCountryPage = () => {
   const { country } = useParams();
-  console.log(useParams());
   const { allCountries } = useGlobalContext();
   const [loading, setLoading] = useState(false);
   const [singleCountry, setSingleCountry] = useState(null);
@@ -58,23 +58,48 @@ const SingleCountryPage = () => {
     borders,
   } = singleCountry;
 
-  const currency = Object.values(currencies)
-    .map((x) => x.name)
-    .sort((a, b) => a.localeCompare(b));
-  const language = Object.values(languages).sort((a, b) => a.localeCompare(b));
+  const checkValues = (currencies, nativeName, languages, tld, capitals) => {
+    let currency = currencies,
+      native = nativeName,
+      language = languages,
+      domain = tld,
+      capital = capitals;
 
-  let native = Object.values(nativeName).map((x) => x.common);
-  native = [...new Set(native)];
+    {
+      if (currency) {
+        currency = Object.values(currency)
+          .map((x) => x.name)
+          .sort((a, b) => a.localeCompare(b));
+      } else currency = [];
+    }
 
-  const checkTld = (tld) => {
-    if (!tld) return undefined;
-    if (tld.length === 0) return undefined;
-    else return tld[0];
+    {
+      if (native) {
+        native = Object.values(native).map((x) => x.common);
+        native = [...new Set(native)];
+      } else native = [];
+    }
+
+    {
+      if (language) {
+        language = Object.values(language).sort((a, b) => a.localeCompare(b));
+      } else language = [];
+    }
+
+    if (domain && domain.length > 0) {
+      domain = domain[0];
+    }
+    if (!(capital && capital.length)) {
+      capital = [];
+    }
+    return { currency, native, language, domain, capital };
   };
+
+  const values = checkValues(currencies, nativeName, languages, tld, capitals);
 
   return (
     <Wrapper className='section-center'>
-      <Link className='back btn' to='/'>
+      <Link className='back btn' to='/' state={true}>
         <div>
           <BiArrowBack />
           Back
@@ -88,9 +113,9 @@ const SingleCountryPage = () => {
             <div className='sect'>
               <p>
                 <span className='bold'>
-                  {native.length > 1 ? "Native Names" : "Native Name"} :
+                  {values.native.length > 1 ? "Native Names" : "Native Name"} :
                 </span>{" "}
-                {native.join(", ")}
+                {values.native.join(", ")}
               </p>
               <p>
                 <span className='bold'>Population :</span> {population}
@@ -103,20 +128,22 @@ const SingleCountryPage = () => {
               </p>
               <p>
                 <span className='bold'>
-                  {capitals.length > 1 ? "Capitals" : "Capital"} :
+                  {values.capital.length > 1 ? "Capitals" : "Capital"} :
                 </span>{" "}
-                {capitals.join(", ")}
+                {values.capital.join(", ")}
               </p>
             </div>
             <div className='sect'>
               <p>
-                <span className='bold'>Top Level Domain :</span> {checkTld(tld)}
+                <span className='bold'>Top Level Domain :</span> {values.domain}
               </p>
               <p>
-                <span className='bold'>Currencies :</span> {currency.join(", ")}
+                <span className='bold'>Currencies :</span>{" "}
+                {values.currency.join(", ")}
               </p>
               <p>
-                <span className='bold'>Languages :</span> {language.join(", ")}
+                <span className='bold'>Languages :</span>{" "}
+                {values.language.join(", ")}
               </p>
             </div>
             <div className='sect'>
@@ -131,6 +158,7 @@ const SingleCountryPage = () => {
     </Wrapper>
   );
 };
+
 const Wrapper = styled.section`
   .back {
     margin: 2.2em 0 3.2em;

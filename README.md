@@ -33,8 +33,7 @@ Users can:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://my-country-explorer.netlify.app/](https://my-country-explorer.netlify.app/)
 
 ## My Process
 
@@ -50,7 +49,7 @@ Users can:
 
 ### What I learned
 
-- I gained experience in working with APIs, which helped me to better understand how to integrate different systems and access external data sources.
+- I gained experience in handling errors that can occur when working with APIs, specifically when dealing with missing or undefined properties in the response data. I checked for property definitions before using them to create more robust and reliable code.
 - I also learned about global state management, which allowed me to efficiently manage and share data between different components of the project.
 - I was able to expand my knowledge of web development by learning and applying advanced CSS techniques to create more responsive and dynamic user interfaces for the project.
 

@@ -17,8 +17,10 @@ const Filter = () => {
 
 const Wrapper = styled.div`
   width: 50%;
-  box-shadow: var(--light-shadow);
-
+  padding: 1em 0;
+  border-radius: var(--radius);
+  background-color: var(--clr-grey-10);
+  color: var(--clr-grey-1);
   select {
     width: 100%;
     height: 100%;

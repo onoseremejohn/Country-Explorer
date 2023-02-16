@@ -21,13 +21,14 @@ const Wrapper = styled.div`
 
   select {
     width: 100%;
+    height: 100%;
     outline: none;
     border: none;
-    padding: 1em 2em;
+    padding: 2em 4em;
     background-color: var(--clr-grey-10);
     color: var(--clr-grey-1);
-  }
-  option {
+    border-radius: var(--radius);
+    font-size: 0.875rem;
   }
 
   @media screen and (min-width: 800px) {

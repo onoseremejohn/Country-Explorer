@@ -31,8 +31,6 @@ Users can:
 
 ![SCREENSHOT](./public/screenshot.png)
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
@@ -73,4 +71,4 @@ const proudOfThisFunc = ({ borders }) => {
 ## Acknowledgments
 
 - I would like to express my deep appreciation and gratitude to God, without whose guidance and blessings, this project would not have been possible.
-- I am also thankful for the invaluable support and assistance provided by ChatGPT, whose contributions helped me to gain a deeper understanding of the subject matter and provided valuable insights that greatly improved the quality of my work and sped up my workflow.
+- I am also thankful for the invaluable support and assistance provided by ChatGPT, whose contributions greatly improved the quality of my work and sped up my workflow.

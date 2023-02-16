@@ -66,6 +66,12 @@ const SingleCountryPage = () => {
   let native = Object.values(nativeName).map((x) => x.common);
   native = [...new Set(native)];
 
+  const checkTld = (tld) => {
+    if (!tld) return undefined;
+    if (tld.length === 0) return undefined;
+    else return tld[0];
+  };
+
   return (
     <Wrapper className='section-center'>
       <Link className='back btn' to='/'>
@@ -104,7 +110,7 @@ const SingleCountryPage = () => {
             </div>
             <div className='sect'>
               <p>
-                <span className='bold'>Top Level Domain :</span> {tld[0]}
+                <span className='bold'>Top Level Domain :</span> {checkTld(tld)}
               </p>
               <p>
                 <span className='bold'>Currencies :</span> {currency.join(", ")}

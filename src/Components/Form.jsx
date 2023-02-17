@@ -27,6 +27,26 @@ const Wrapper = styled.section`
     background-color: var(--clr-grey-10);
     box-shadow: var(--light-shadow);
     border-radius: var(--radius);
+    position: relative;
+    .clear-icon {
+      background: none;
+      border: none;
+      display: grid;
+      place-content: center;
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      right: 3em;
+      background-color: var(--clr-grey-5);
+      transform: translateY(-50%);
+      padding: 0.05em;
+      aspect-ratio: 1/1;
+      height: 40%;
+      svg {
+        color: var(--clr-white);
+        font-size: 0.8rem;
+      }
+    }
   }
   svg {
     font-size: 1.2rem;

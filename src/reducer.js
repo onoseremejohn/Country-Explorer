@@ -72,7 +72,11 @@ export default function (state, action) {
   }
 
   if (action.type === FILTER_SEARCH) {
-    const { name, value } = action.payload;
+    let { name, value } = action.payload;
+    if ((name === "text" && /^\s+$/.test(value)) || (!name && !value)) {
+      name = "text";
+      value = "";
+    }
     return { ...state, filters: { ...state.filters, [name]: value } };
   }
 
@@ -81,7 +85,7 @@ export default function (state, action) {
     let { text, region } = state.filters;
     let tempCountries = [...allCountries];
     if (text) {
-      text = text.toLowerCase();
+      text = text.trim().toLowerCase();
       tempCountries = tempCountries.filter(
         (country) =>
           country.name.toLowerCase().includes(text) ||

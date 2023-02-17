@@ -57,6 +57,7 @@ Variables
 .dark-mode {
   --clr-white: hsl(209, 61%, 16%);
   --clr-grey-1: #fff;
+  --clr-grey-5: #f7f9fb;
   --clr-grey-10: hsl(209, 34%, 30%);
   --clr-black: #fff;
 }

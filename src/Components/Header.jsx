@@ -7,12 +7,17 @@ const Header = () => {
     <Wrapper>
       <div className='section-center'>
         <h2>Where in the world?</h2>
-        <div onClick={toggleMode}>
-          <button>{mode === "light" ? <BsMoon /> : <BsSunFill />}</button>
-          <p className='bold'>
-            {mode === "light" ? "Dark Mode" : "Light Mode"}
-          </p>
-        </div>
+        <button className='bold' onClick={toggleMode}>
+          {mode === "light" ? (
+            <>
+              <BsMoon /> Dark Mode
+            </>
+          ) : (
+            <>
+              <BsSunFill /> Light Mode
+            </>
+          )}
+        </button>
       </div>
     </Wrapper>
   );
@@ -39,16 +44,11 @@ const Wrapper = styled.header`
   button {
     background: none;
     border: none;
-    svg {
-      font-size: 1rem;
-      color: var(--clr-grey-1);
-    }
-  }
-  .section-center > div {
+    font-size: 1rem;
+    color: var(--clr-grey-1);
     display: flex;
-    gap: 0.5em;
     align-items: center;
-    cursor: pointer;
+    gap: 0.5em;
   }
 `;
 

@@ -10,7 +10,7 @@ const SingleCountry = ({
 }) => {
   return (
     <Wrapper>
-      <Link to={name}>
+      <Link to={name} state={{ from: true }}>
         <img src={svg} alt={alt || name} />
         <footer>
           <h3>{name}</h3>

@@ -10,9 +10,8 @@ const SearchForm = () => {
   const searchRef = useRef(null);
   const location = useLocation();
   useEffect(() => {
-    if (location.state) return;
-    searchRef.current.focus();
-  }, [location.state]);
+    if (location.state) searchRef.current.focus();
+  }, [location]);
 
   return (
     <div className='search-form'>

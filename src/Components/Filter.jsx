@@ -17,7 +17,7 @@ const Filter = () => {
 
 const Wrapper = styled.div`
   width: 50%;
-  padding: 1em 0;
+  padding: 0.5em 2em;
   border-radius: var(--radius);
   background-color: var(--clr-grey-10);
   color: var(--clr-grey-1);
@@ -26,7 +26,6 @@ const Wrapper = styled.div`
     height: 100%;
     outline: none;
     border: none;
-    padding: 2em 4em;
     background-color: var(--clr-grey-10);
     color: var(--clr-grey-1);
     border-radius: var(--radius);

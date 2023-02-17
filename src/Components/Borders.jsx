@@ -10,7 +10,7 @@ const Borders = ({ borders }) => {
   return (
     <div className='borders'>
       {borderCountries.map((country) => (
-        <Link key={country.id} to={`/${country.name}`}>
+        <Link key={country.id} to={`/${country.name}`} state={{ from: true }}>
           <span>{country.name}</span>
         </Link>
       ))}

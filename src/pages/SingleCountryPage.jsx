@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import Loading from "../Components/Loading";
 import { useGlobalContext } from "../Context";
 import Borders from "../Components/Borders";
@@ -9,6 +9,8 @@ import Borders from "../Components/Borders";
 const SingleCountryPage = () => {
   const { country } = useParams();
   const { allCountries } = useGlobalContext();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [loading, setLoading] = useState(false);
   const [singleCountry, setSingleCountry] = useState(null);
   useEffect(() => {
@@ -36,12 +38,17 @@ const SingleCountryPage = () => {
     return (
       <div className='absolute text-center'>
         <h3>No country to display...</h3>
-        <Link to='/' className='btn'>
+        <Link to='/' className='btn' state={true}>
           Home
         </Link>
       </div>
     );
   }
+
+  const goBack = () => {
+    if (location.state && location.state.from) navigate(-1);
+    else navigate("/", { state: true });
+  };
 
   const {
     alt,
@@ -99,12 +106,12 @@ const SingleCountryPage = () => {
 
   return (
     <Wrapper className='section-center'>
-      <Link className='back btn' to='/' state={true}>
+      <button className='back btn' onClick={goBack}>
         <div>
           <BiArrowBack />
           Back
         </div>
-      </Link>
+      </button>
       <div className='main'>
         <img src={svg} alt={alt || name} />
         <div>
